@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyMC Labs Newsletter - September 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            background:#f8f9fa;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #006FFF 0%, #1AB0E8 100%);
+            color: white;
+            padding: 30px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255,255,255,0.03) 2px,
+                rgba(255,255,255,0.03) 4px
+            );
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: rotate(0deg) translate(0px, 0px); }
+            50% { transform: rotate(180deg) translate(10px, 10px); }
+        }
+        
+        .logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+            letter-spacing: -0.5px;
+        }
+        
+        .header .date {
+            font-size: 16px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+            font-weight: 300;
+        }
+        
+        .intro {
+            padding: 30px 30px;
+            /* background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); */
+            background: #f8fafc;
+            text-align: center;
+        }
+        
+        .intro h2 {
+            color: #1e293b;
+            font-size: 24px;
+            /* margin-bottom: 20px; */
+            font-weight: 700;
+            background: linear-gradient(135deg, #006FFF, #1AB0E8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .intro p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.8;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .sections-container {
+            padding: 0px;
+            background: #f8fafc;
+        }
+        
+        .card {
+            background: white;
+            /* border-radius: 16px;
+            margin-bottom: 30px; */
+            overflow: hidden;
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .card:last-child {
+            margin-bottom: 0;
+        }
+        
+        .card-header {
+            padding: 30px 30px 0;
+        }
+        
+        .card-tag {
+            display: inline-block;
+            /* background: linear-gradient(135deg, #006FFF, #1AB0E8); */
+            background: #1AB0E8;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+        
+        .card h3 {
+            color: #1e293b;
+            font-size: 26px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .card-meta {
+            color: #64748b;
+            font-size: 14px;
+            /* margin-bottom: 0px; */
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-meta::before {
+            content: '📅';
+            margin-right: 8px;
+        }
+        
+        .card-content {
+            padding: 0 30px 30px;
+        }
+        
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        
+        .card p {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 1px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            position: relative;
+        }
+        
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #006FFF, #1AB0E8);
+            border-radius: 2px 0 0 2px;
+        }
+        
+        .highlight-box h4 {
+            color: #1e293b;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 15px;
+            color: #1e40af;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .features-list li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 35px;
+            font-size: 15px;
+            color: #475569;
+        }
+        
+        .features-list li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #006FFF 0%, #1AB0E8 100%);
+            color: white;
+            text-decoration: none;
+            padding: 10px 28px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 0px;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border: 2px dashed #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 12px;
+            color: #64748b;
+            font-weight: 500;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #006FFF;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .footer h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .footer p {
+            margin-bottom: 12px;
+            font-size: 15px;
+            opacity: 0.9;
+        }
+        
+        .footer a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer a:hover {
+            color: #34C4D9;
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        code {
+            background: #f1f5f9;
+            color: #e11d48;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+            
+            .header, .intro, .sections-container, .footer {
+                padding: 25px 20px;
+            }
+            
+            .card-header, .card-content {
+                padding: 20px;
+            }
+            
+            .card-header {
+                padding-bottom: 0;
+            }
+            
+            .header h1 {
+                font-size: 26px;
+            }
+            
+            .intro h2 {
+                font-size: 22px;
+            }
+            
+            .card h3 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="https://res.cloudinary.com/dx3t8udaw/image/upload/v1757573637/pymc_labs_logo_white_976eb66e5d.png" alt="PyMC Labs" class="logo">
+            <h1>PyMC Labs Newsletter</h1>
+            <div class="date">September 2025 Edition</div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="intro">
+            <h2>Accelerating Bayesian Innovation</h2>
+            <p>Welcome to our September newsletter! This month has been packed with exciting developments as we continue to bridge the gap between advanced research and practical business applications.</p>
+        </div>
+
+        <!-- Sections Container -->
+        <div class="sections-container">
+            
+            <!-- Applied Bayesian Modeling Workshop -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-tag">Workshop</span>
+                    <h3>Applied Bayesian Modeling Workshop</h3>
+                    <div class="card-meta">Registration Now Open • October 6 Start Date</div>
+                </div>
+                <div class="card-content">
+                    <img src="https://res.cloudinary.com/dx3t8udaw/image/upload/v1757527929/Bayesian_Modeling_Workshop_Linkedin_Banner_Template_7aa431a7eb.png" alt="Applied Bayesian Modeling Workshop with Chris Fonnesbeck, Allen Downey, and Vianey Leos Barajas">
+
+                    <p>We're thrilled to announce that registration has reopened for our flagship Applied Bayesian Modeling Workshop! This intensive 4-week cohort program starts October 6 and offers hands-on training with the developers of PyMC.</p>
+
+                    <div class="highlight-box">
+                        <h4>What You'll Learn</h4>
+                        <ul class="features-list">
+                            <li>Build and interpret Bayesian models for real-world problems</li>
+                            <li>Run and diagnose MCMC workflows for reliable results</li>
+                            <li>Master PyMC for uncertainty modeling and complex systems</li>
+                            <li>Debug, improve, and scale models for your own work</li>
+                        </ul>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Weeks</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Expert Instructors</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">$1,499</span>
+                            <span class="stat-label">Early Bird</span>
+                        </div>
+                    </div>
+
+                    <p><strong>Expert Instructors:</strong> Learn directly from <a href="https://www.linkedin.com/in/christopher-fonnesbeck-374a492a/?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" target="_blank">Chris Fonnesbeck</a>, <a href="https://www.linkedin.com/in/allendowney/?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" target="_blank">Allen Downey</a>, and <a href="https://www.linkedin.com/in/vianey-leos-barajas-449831354/?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" target="_blank">Vianey Leos Barajas</a> - leading voices in the Bayesian modeling community.</p>
+
+                    <a href="https://www.pymc-labs.com/workshops/applied-bayesian-modeling?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" class="cta-button">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Expert Access Program -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-tag">New Launch</span>
+                    <h3>Expert Access Program (EAP)</h3>
+                    <div class="card-meta">Launched August 26, 2025</div>
+                </div>
+                <div class="card-content">
+                    <img src="https://res.cloudinary.com/dx3t8udaw/image/upload/v1755960191/image1_65dbf5db72.jpg" alt="PyMC Labs Expert Access Program">
+
+                    <p>We've officially launched our Expert Access Program - a new service that provides ongoing access to our Bayesian modeling expertise. No more starting from scratch with each new challenge.</p>
+
+                    <div class="highlight-box">
+                        <h4>The Challenge We're Solving</h4>
+                        <p>Organizations recognize the value of advanced models but struggle to get expert guidance when they need it most. Traditional consulting delivers short-term gains, but when projects end, so does the support.</p>
+                    </div>
+
+                    <p><strong>Base Package:</strong> Direct expert communication with priority response within one business day, plus access to our growing library of implementation guides.</p>
+
+                    <p><strong>Pro Package:</strong> Everything in Base plus bi-weekly coaching calls, monthly Expert Exchange Sessions, priority access to new tools, and strategic consultation on measurement frameworks.</p>
+
+                    <p>As Fox Entertainment's Eugene Kwok shared: <em>"The PyMC Labs Coaching program has been transformative for our small Data Science team, enabling us to deliver results at the level of a full-scale department."</em></p>
+
+                    <a href="https://www.pymc-labs.com/blog-posts/expert-access-program?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" class="cta-button">Learn More About EAP</a>
+                </div>
+            </div>
+
+            <!-- Fivetran Partnership -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-tag">Partnership</span>
+                    <h3>Strategic Partnership with Fivetran</h3>
+                    <div class="card-meta">Announced September 1, 2025</div>
+                </div>
+                <div class="card-content">
+                    <img src="https://res.cloudinary.com/dx3t8udaw/image/upload/v1756847861/Five_Tran_Partnership_Announcement_fd7076fcd2.png" alt="PyMC Labs and Fivetran Strategic Partnership Announcement">
+
+                    <p>We're excited to announce our strategic partnership with Fivetran, which makes Marketing Mix Modeling much easier by removing the data preparation bottleneck.</p>
+
+                    <div class="highlight-box">
+                        <h4>This Integration Makes It Much Easier</h4>
+                        <p>Fivetran's ad_reporting dbt package brings together spend, impressions, clicks, and conversion metrics from major channels into a unified format. PyMC-Marketing now turns those standardized tables into production-grade Bayesian MMM models.</p>
+                    </div>
+
+                    <p><strong>What We Shipped:</strong> New data loaders including <code>process_fivetran_ad_reporting()</code> and <code>process_fivetran_shopify_orders_unique_orders()</code> that transform Fivetran/dbt outputs into MMM-ready inputs in just a few lines of code.</p>
+
+                    <p><strong>The Impact:</strong> Teams report moving from weeks of data wrangling to days for complete MMM deployment. This partnership enables data teams to focus on insights and decision-making rather than ETL complexity.</p>
+
+                    <a href="https://www.pymc-labs.com/blog-posts/fivetran-partnership?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" class="cta-button">Read Full Partnership Details</a>
+                </div>
+            </div>
+
+            <!-- PyMC Marketing Release -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-tag">Release</span>
+                    <h3>PyMC-Marketing 0.16.0</h3>
+                    <div class="card-meta">Released September 1, 2025</div>
+                </div>
+                <div class="card-content">
+                    <div class="image-placeholder">
+                        PyMC-Marketing 0.16.0 Release Banner<br>
+                        <small>New features: Fivetran Data Loaders, Sensitivity Analysis, HSGP Support</small>
+                    </div>
+
+                    <p>Our latest PyMC-Marketing release brings powerful new features that enhance your Marketing Mix Modeling capabilities and streamline your workflow.</p>
+
+                    <div class="highlight-box">
+                        <h4>Major New Features</h4>
+                        <ul class="features-list">
+                            <li><strong>Fivetran Data Loaders:</strong> Seamless integration with Fivetran's data pipeline</li>
+                            <li><strong>Sensitivity Analysis:</strong> Enhanced marginal effects capabilities</li>
+                            <li><strong>HSGP Support:</strong> Time-varying media and intercept modeling</li>
+                            <li><strong>Enhanced ModelBuilder:</strong> Rich table displays and better indexing</li>
+                        </ul>
+                    </div>
+
+                    <p>This release represents months of collaboration with our enterprise clients and community feedback. The Fivetran integration alone reduces data preparation time from weeks to minutes.</p>
+
+                    <p><strong>Contributors:</strong> Special thanks to our 10 contributors who made this release possible, including new contributors <a href="https://github.com/daniel-saunders-phil?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" target="_blank">@daniel-saunders-phil</a> and <a href="https://github.com/aaron1-z?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" target="_blank">@aaron1-z</a>.</p>
+
+                    <a href="https://github.com/pymc-labs/pymc-marketing/releases/tag/0.16.0?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" class="cta-button">View Release Notes</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h4>Stay Connected with PyMC Labs</h4>
+            <p>We're building the future of Bayesian modeling and AI for business.</p>
+            <p>Visit our website: <a href="https://www.pymc-labs.com?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025">www.pymc-labs.com</a></p>
+            <p>Questions? Contact us: <a href="mailto:info@pymc-labs.com">info@pymc-labs.com</a></p>
+            
+            <div class="social-links">
+                <a href="https://twitter.com/pymc_labs?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025">Twitter</a>
+                <a href="https://linkedin.com/company/pymc-labs?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025">LinkedIn</a>
+                <a href="https://github.com/pymc-labs?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025">GitHub</a>
+                <a href="https://youtube.com/@pymc-labs?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025">YouTube</a>
+            </div>
+            
+            <p style="margin-top: 25px; font-size: 12px; opacity: 0.8;">
+                © 2025 PyMC Labs. All rights reserved.<br>
+                <a href="#" style="font-size: 12px;">Unsubscribe</a> | <a href="#" style="font-size: 12px;">Update Preferences</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
