@@ -26,27 +26,73 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            background: 
+                url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='rgba(255,255,255,0.08)'%3E%3Ccircle cx='5' cy='5' r='1'/%3E%3Ccircle cx='15' cy='5' r='1'/%3E%3Ccircle cx='25' cy='5' r='1'/%3E%3Ccircle cx='35' cy='5' r='1'/%3E%3Ccircle cx='5' cy='15' r='1'/%3E%3Ccircle cx='15' cy='15' r='1'/%3E%3Ccircle cx='25' cy='15' r='1'/%3E%3Ccircle cx='35' cy='15' r='1'/%3E%3Ccircle cx='5' cy='25' r='1'/%3E%3Ccircle cx='15' cy='25' r='1'/%3E%3Ccircle cx='25' cy='25' r='1'/%3E%3Ccircle cx='35' cy='25' r='1'/%3E%3Ccircle cx='5' cy='35' r='1'/%3E%3Ccircle cx='15' cy='35' r='1'/%3E%3Ccircle cx='25' cy='35' r='1'/%3E%3Ccircle cx='35' cy='35' r='1'/%3E%3Ccircle cx='10' cy='10' r='0.5'/%3E%3Ccircle cx='20' cy='10' r='0.5'/%3E%3Ccircle cx='30' cy='10' r='0.5'/%3E%3Ccircle cx='10' cy='20' r='0.5'/%3E%3Ccircle cx='20' cy='20' r='0.5'/%3E%3Ccircle cx='30' cy='20' r='0.5'/%3E%3Ccircle cx='10' cy='30' r='0.5'/%3E%3Ccircle cx='20' cy='30' r='0.5'/%3E%3Ccircle cx='30' cy='30' r='0.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            background-size: 40px 40px, 100% 100%;
             color: white;
             padding: 30px 20px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 200%;
+            height: 40px;
+            background: url("data:image/svg+xml,%3Csvg width='200' height='40' viewBox='0 0 200 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,20 Q50,5 100,20 T200,20' stroke='rgba(255,255,255,0.15)' stroke-width='2' fill='none'/%3E%3Cpath d='M0,30 Q50,15 100,30 T200,30' stroke='rgba(255,255,255,0.1)' stroke-width='1.5' fill='none'/%3E%3Cpath d='M0,10 Q50,25 100,10 T200,10' stroke='rgba(255,255,255,0.08)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            animation: sineWaveFloat 15s linear infinite;
+            pointer-events: none;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 200%;
+            height: 30px;
+            background: url("data:image/svg+xml,%3Csvg width='150' height='30' viewBox='0 0 150 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,15 Q37.5,5 75,15 T150,15' stroke='rgba(255,255,255,0.12)' stroke-width='1.5' fill='none'/%3E%3Cpath d='M0,25 Q37.5,10 75,25 T150,25' stroke='rgba(255,255,255,0.06)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            animation: sineWaveFloat 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes sineWaveFloat {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(50%);
+            }
         }
         
         .logo {
             max-width: 200px;
             height: auto;
             margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
         }
         
         .header h1 {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
         }
         
         .header .date {
             font-size: 16px;
             opacity: 0.9;
+            position: relative;
+            z-index: 1;
         }
         
         .intro {
@@ -433,7 +479,7 @@
                 <p>Most organizations face a frustrating gap: advanced models can drive major impact, but expert guidance is scarce and intermittent. Traditional consulting gives short-term wins—but the moment the project ends, so does your support. EAP flips that model. With ongoing access, your team can tackle problems in real time, accelerate decision-making, and avoid costly missteps.</p>
             </div>
 
-            <h4>Choose Your EAP Package</h4>
+            <h4>How EAP Works for You</h4>
             
             <div class="packages-container">
                 <div class="package-card">
