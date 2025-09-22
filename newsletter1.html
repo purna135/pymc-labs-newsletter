@@ -203,6 +203,177 @@
             margin: 0 10px;
             font-size: 14px;
         }
+
+        /* Enhanced EAP Section Styles */
+        .packages-container {
+            display: flex;
+            gap: 20px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .package-card {
+            flex: 1;
+            min-width: 250px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .package-card.featured {
+            background: #eff6ff;
+            border-color: #3b82f6;
+        }
+
+        .package-header {
+            margin-bottom: 15px;
+        }
+
+        .package-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+
+        .package-card.featured .package-name {
+            color: #1e3a8a;
+        }
+
+        .package-tagline {
+            font-size: 14px;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .package-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #475569;
+        }
+
+        .testimonial-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid #0ea5e9;
+            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .testimonial-box::before {
+            content: '"';
+            font-size: 60px;
+            color: #0ea5e9;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-family: Georgia, serif;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 15px;
+            color: #0c4a6e;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #0369a1;
+            font-size: 14px;
+        }
+
+        .enhanced-highlight-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .enhanced-highlight-box h4 {
+            color: #1e293b;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .enhanced-highlight-box p {
+            color: #475569;
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        /* Code highlighting styles */
+        .code-highlight {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 13px;
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        .code-block {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #334155;
+            overflow-x: auto;
+        }
+
+        .integration-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 15px;
+        }
+
+        .feature-item h5 {
+            color: #1e293b;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: #475569;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .packages-container {
+                flex-direction: column;
+            }
+            
+            .package-card {
+                min-width: 100%;
+            }
+
+            .integration-features {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -216,8 +387,8 @@
 
         <!-- Introduction -->
         <div class="intro">
-            <h2>Accelerating Bayesian Innovation</h2>
-            <p>Welcome to our September newsletter! This month has been packed with exciting developments as we continue to bridge the gap between advanced research and practical business applications. From launching our Expert Access Program to building strategic partnerships, we're making Bayesian modeling more accessible than ever.</p>
+            <h2>Pioneering the Future of MMM & Bayesian Analytics</h2>
+            <p>Welcome to our September newsletter! This month has been full of exciting developments as we continue to bridge the gap between advanced research and practical business applications. From launching our Expert Access Program to building strategic partnerships, we’re making Marketing Mix Modeling faster and Bayesian workflows more accessible than ever.</p>
         </div>
 
         <!-- Applied Bayesian Modeling Workshop -->
@@ -227,7 +398,7 @@
             
             <img src="https://res.cloudinary.com/dx3t8udaw/image/upload/v1757527929/Bayesian_Modeling_Workshop_Linkedin_Banner_Template_7aa431a7eb.png" alt="Applied Bayesian Modeling Workshop with Chris Fonnesbeck, Allen Downey, and Vianey Leos Barajas" style="width: 100%; height: auto; border-radius: 8px;">
 
-            <p>We're thrilled to announce that registration has reopened for our flagship Applied Bayesian Modeling Workshop! This intensive 4-week cohort program starts October 6 and offers hands-on training with the developers of PyMC.</p>
+            <p>Following the incredible response to our first Applied Bayesian Modeling Workshop, we're bringing it back this October! Join us for another 4-week deep dive,  hands-on training with PyMC's core developers and leading voices in Bayesian modeling.</p>
 
             <div class="highlight-box">
                 <h4>What You'll Learn</h4>
@@ -253,18 +424,45 @@
 
             <img src="https://res.cloudinary.com/dx3t8udaw/image/upload/v1755960191/image1_65dbf5db72.jpg" alt="PyMC Labs Expert Access Program" style="width: 100%; height: auto; border-radius: 8px;">
 
-            <p>We've officially launched our Expert Access Program — a new service that provides ongoing access to our Bayesian modeling expertise. No more starting from scratch with each new challenge.</p>
+            <p>We're excited to announce the launch of our Expert Access Program —a new way to get continuous support from our PyMC and Bayesian modeling experts.</p>
 
-            <div class="highlight-box">
-                <h4>The Challenge We're Solving</h4>
-                <p>Organizations recognize the value of advanced models but struggle to get expert guidance when they need it most. Traditional consulting delivers short-term gains, but when projects end, so does the support.</p>
+            <p>Imagine having a team of Bayesian modeling experts on call, ready to help you solve complex challenges as they happen, not weeks later. That's exactly what EAP delivers. EAP ensures your team has expert guidance exactly when you need it, helping you move faster, avoid pitfalls, and make the most of your analytics investments.</p>
+
+            <div class="enhanced-highlight-box">
+                <h4>Why EAP Changes the Game</h4>
+                <p>Most organizations face a frustrating gap: advanced models can drive major impact, but expert guidance is scarce and intermittent. Traditional consulting gives short-term wins—but the moment the project ends, so does your support. EAP flips that model. With ongoing access, your team can tackle problems in real time, accelerate decision-making, and avoid costly missteps.</p>
             </div>
 
-            <p><strong>Base Package:</strong> Direct expert communication with priority response within one business day, plus access to our growing library of implementation guides.</p>
+            <h4>Choose Your EAP Package</h4>
+            
+            <div class="packages-container">
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-name">Base Package</div>
+                        <div class="package-tagline">Essential Expert Access</div>
+                    </div>
+                    <div class="package-content">
+                        Direct access to experts with priority responses within one business day, plus access to our practical implementation guides. Perfect for teams who need fast answers and actionable insights.
+                    </div>
+                </div>
 
-            <p><strong>Pro Package:</strong> Everything in Base plus bi-weekly coaching calls, monthly Expert Exchange Sessions, priority access to new tools, and strategic consultation on measurement frameworks.</p>
+                <div class="package-card featured">
+                    <div class="package-header">
+                        <div class="package-name">Pro Package</div>
+                        <div class="package-tagline">Complete Expert Partnership</div>
+                    </div>
+                    <div class="package-content">
+                        Everything in Base, plus bi-weekly coaching calls, bi-monthly Expert Exchange Sessions, early access to new tools, custom workshops, and strategic guidance on measurement frameworks. Ideal for organizations that want to embed expert-level decision-making into their day-to-day operations.
+                    </div>
+                </div>
+            </div>
 
-            <p>As Fox Entertainment's Eugene Kwok shared: <em>"The PyMC Labs Coaching program has been transformative for our small Data Science team, enabling us to deliver results at the level of a full-scale department."</em></p>
+            <p>EAP doesn't just give you advice — it gives your team a competitive edge. Faster learning, smarter models, and continuous expert support mean your analytics never hit a pause.</p>
+
+            <div class="testimonial-box">
+                <div class="testimonial-text">"The PyMC Labs Coaching program has been transformative for our small Data Science team, enabling us to deliver results at the level of a full-scale department."</div>
+                <div class="testimonial-author">— Eugene Kwok, Executive Director Research & Analytics, Fox Entertainment</div>
+            </div>
 
             <a href="https://www.pymc-labs.com/blog-posts/expert-access-program?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" target="_blank" rel="noopener" class="cta-button">Learn More About EAP</a>
         </div>
@@ -281,14 +479,28 @@
 
             <div class="highlight-box">
                 <h4>This Integration Makes It Much Easier</h4>
-                <p>Fivetran's ad_reporting dbt package brings together spend, impressions, clicks, and conversion metrics from major channels (Google, Meta, LinkedIn, TikTok, Amazon) into a unified format. PyMC-Marketing now turns those standardized tables into production-grade Bayesian MMM models.</p>
+                <p>Fivetran's <span class="code-highlight">ad_reporting</span> dbt package brings together spend, impressions, clicks, and conversion metrics from major channels (Google, Meta, LinkedIn, TikTok, Amazon) into a unified format. PyMC-Marketing now turns those standardized tables into production-grade Bayesian MMM models.</p>
             </div>
 
-            <p><strong>What We Shipped:</strong> New data loaders including <code>process_fivetran_ad_reporting()</code> and <code>process_fivetran_shopify_unique_orders()</code> that transform Fivetran/dbt outputs into MMM-ready inputs in just a few lines of code.</p>
+            <h4>What We Shipped</h4>
+            <p>New data loaders that transform Fivetran/dbt outputs into MMM-ready inputs in just a few lines of code:</p>
+            
+            <div class="code-block">
+                <div><span class="code-highlight">process_fivetran_ad_reporting()</span></div>
+                <div><span class="code-highlight">process_fivetran_shopify_orders_unique_orders()</span></div>
+            </div>
 
-            <p><strong>The Impact:</strong> Teams report moving from weeks of data wrangling to days for complete MMM deployment. This partnership enables data teams to focus on insights and decision-making rather than ETL complexity.</p>
+            <div class="integration-features">
+                <div class="feature-item">
+                    <h5>⚡ The Impact</h5>
+                    <p>Teams report moving from weeks of data wrangling to days for complete MMM deployment. Focus on insights and decision-making rather than ETL complexity.</p>
+                </div>
 
-            <p><strong>Who Benefits:</strong> In-house data teams using Fivetran, analytics consultancies serving multiple clients, and finance/growth leaders needing defendable ROAS and budget recommendations.</p>
+                <div class="feature-item">
+                    <h5>🎯 Who Benefits</h5>
+                    <p>In-house data teams using Fivetran, analytics consultancies serving multiple clients, and finance/growth leaders needing defendable ROAS recommendations.</p>
+                </div>
+            </div>
 
             <a href="https://www.pymc-labs.com/blog-posts/fivetran-partnership?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" target="_blank" rel="noopener" class="cta-button">Read Full Partnership Details</a>
         </div>
@@ -325,10 +537,7 @@
             <h3>PyMC-Marketing 0.16.0 Released</h3>
             <div class="section-meta">Released September 1, 2025</div>
 
-            <div class="image-placeholder">
-                PyMC-Marketing banner placeholder<br>
-                <!-- <small>(Dashboard or modeling interface)</small> -->
-            </div>
+            <img src="https://res.cloudinary.com/dx3t8udaw/image/upload/v1758558502/pymc_marketing_release_2a9d875a82.png" alt="PyMC-Marketing 0.16.0 Release Announcement" style="width: 100%; height: auto; border-radius: 8px;">
 
             <p>Our latest PyMC-Marketing release brings powerful new features that enhance your Marketing Mix Modeling capabilities and streamline your workflow.</p>
 
@@ -352,7 +561,7 @@
         <!-- Footer -->
         <div class="footer">
             <h4>Stay Connected with PyMC Labs</h4>
-            <p>We're building the future of Bayesian modeling and AI for business.</p>
+            <p>We're building the future of Bayesian modeling and Agentic AI for business.</p>
             <p>Visit our website: <a href="https://www.pymc-labs.com?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" target="_blank" rel="noopener">www.pymc-labs.com</a></p>
             <p>Questions? Contact us: <a href="mailto:info@pymc-labs.com">info@pymc-labs.com</a></p>
             
