@@ -116,7 +116,7 @@
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
+            color: white !important;
             text-decoration: none;
             padding: 12px 24px;
             border-radius: 6px;
@@ -152,20 +152,12 @@
         .features-list {
             list-style: none;
             margin: 15px 0;
+            padding-left: 0;
         }
-        
+
         .features-list li {
             padding: 8px 0;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .features-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
+            margin: 0;
         }
         
         .footer {
@@ -403,10 +395,10 @@
             <div class="highlight-box">
                 <h4>What You'll Learn</h4>
                 <ul class="features-list">
-                    <li>Build and interpret Bayesian models for real-world problems</li>
-                    <li>Run and diagnose MCMC workflows for reliable results</li>
-                    <li>Master PyMC for uncertainty modeling and complex systems</li>
-                    <li>Debug, improve, and scale models for your own work</li>
+                    <li>✅ Build and interpret Bayesian models for real-world problems</li>
+                    <li>✅ Run and diagnose MCMC workflows for reliable results</li>
+                    <li>✅ Master PyMC for uncertainty modeling and complex systems</li>
+                    <li>✅ Debug, improve, and scale models for your own work</li>
                 </ul>
             </div>
 
@@ -433,7 +425,7 @@
                 <p>Most organizations face a frustrating gap: advanced models can drive major impact, but expert guidance is scarce and intermittent. Traditional consulting gives short-term wins—but the moment the project ends, so does your support. EAP flips that model. With ongoing access, your team can tackle problems in real time, accelerate decision-making, and avoid costly missteps.</p>
             </div>
 
-            <h4>Choose Your EAP Package</h4>
+            <h4>How EAP Works for You</h4>
             
             <div class="packages-container">
                 <div class="package-card">
@@ -517,10 +509,10 @@
             <div class="highlight-box">
                 <h4>Key Research Findings</h4>
                 <ul class="features-list">
-                    <li><strong>Speed:</strong> PyMC-Marketing runs 2-20x faster than Meridian</li>
-                    <li><strong>Accuracy:</strong> PyMC-Marketing cuts modeling errors in half</li>
-                    <li><strong>Scale:</strong> Only PyMC-Marketing handled enterprise-level datasets successfully</li>
-                    <li><strong>Reliability:</strong> Better channel contribution estimates for budget decisions</li>
+                    <li>✅ <strong>Speed:</strong> PyMC-Marketing runs 2-20x faster than Meridian</li>
+                    <li>✅ <strong>Accuracy:</strong> PyMC-Marketing cuts modeling errors in half</li>
+                    <li>✅ <strong>Scale:</strong> Only PyMC-Marketing handled enterprise-level datasets successfully</li>
+                    <li>✅ <strong>Reliability:</strong> Better channel contribution estimates for budget decisions</li>
                 </ul>
             </div>
 
@@ -531,6 +523,31 @@
             <a href="https://www.pymc-labs.com/blog-posts/pymc-marketing-vs-google-meridian?utm_source=newsletter&utm_medium=email&utm_campaign=sep_2025" target="_blank" rel="noopener" class="cta-button">Read Full Research</a>
         </div>
 
+        <!-- Live Webinar: PyMC-Marketing vs Meridian -->
+        <div class="section">
+            <h3>Live Webinar: PyMC-Marketing vs. Google Meridian Deep Dive</h3>
+            <div class="section-meta">October 1, 2025 • 14:00 UTC</div>
+
+            <img src="https://res.cloudinary.com/dx3t8udaw/image/upload/v1758642166/Py_MC_Marketing_vs_Google_Meridian_Live_Webinar_10d52e6604.png" alt="PyMC-Marketing vs Google Meridian Live Webinar" style="width: 100%; height: auto; border-radius: 8px;">
+
+            <p>Want to dig deeper into our PyMC-Marketing vs. Meridian research? Join our live webinar where the research team will walk you through the findings, explain what they mean for your MMM projects, and answer your questions in real-time.</p>
+
+            <div class="highlight-box">
+                <h4>What You'll Learn</h4>
+                <ul class="features-list">
+                    <li>✅ <strong>Performance Details:</strong> How the two libraries compare in speed, accuracy, and scalability</li>
+                    <li>✅ <strong>When to Use What:</strong> Which tool makes sense for different team sizes and data complexities</li>
+                    <li>✅ <strong>Real Trade-offs:</strong> Concrete performance data to help you choose</li>
+                    <li>✅ <strong>Best Practices:</strong> Tips for getting the most out of your chosen MMM tool</li>
+                </ul>
+            </div>
+
+            <p><strong>Speakers:</strong> <a href="https://www.linkedin.com/in/lfiaschi/" target="_blank" rel="noopener" style="color: #006FFF; text-decoration: none;">Dr. Luca Fiaschi</a>, <a href="https://www.linkedin.com/in/teemu-sailynoja/" target="_blank" rel="noopener" style="color: #006FFF; text-decoration: none;">Teemu Säilynoja</a>, and <a href="https://www.linkedin.com/in/jake-piekarski-715b6a267/" target="_blank" rel="noopener" style="color: #006FFF; text-decoration: none;">Jake Piekarski</a> — the same team behind the research study.</p>
+
+            <p><strong>When:</strong> Wednesday, October 1, 2025 at 14:00 UTC (7:00 AM PT / 10:00 AM ET / 4:00 PM Berlin)</p>
+
+            <a href="https://numfocus-org.zoom.us/webinar/register/WN_DGAOSG-KSU-i4aX8VpF0Qw" target="_blank" rel="noopener" class="cta-button">Register for Free Webinar</a>
+        </div>
 
         <!-- PyMC Marketing Release -->
         <div class="section">
@@ -544,10 +561,10 @@
             <div class="highlight-box">
                 <h4>Major New Features</h4>
                 <ul class="features-list">
-                    <li><strong>Fivetran Data Loaders:</strong> Seamless integration with Fivetran's data pipeline</li>
-                    <li><strong>Sensitivity Analysis:</strong> Enhanced marginal effects capabilities</li>
-                    <li><strong>HSGP Support:</strong> Time-varying media and intercept modeling</li>
-                    <li><strong>Enhanced ModelBuilder:</strong> Rich table displays and better indexing</li>
+                    <li>✅ <strong>Fivetran Data Loaders:</strong> Seamless integration with Fivetran's data pipeline</li>
+                    <li>✅ <strong>Sensitivity Analysis:</strong> Enhanced marginal effects capabilities</li>
+                    <li>✅ <strong>HSGP Support:</strong> Time-varying media and intercept modeling</li>
+                    <li>✅ <strong>Enhanced ModelBuilder:</strong> Rich table displays and better indexing</li>
                 </ul>
             </div>
 
@@ -556,6 +573,49 @@
             <p><strong>Contributors:</strong> Special thanks to our 10 contributors who made this release possible, including new contributors <a href="https://github.com/daniel-saunders-phil" target="_blank" rel="noopener">@daniel-saunders-phil</a> and <a href="https://github.com/aaron1-z" target="_blank" rel="noopener">@aaron1-z</a>.</p>
 
             <a href="https://github.com/pymc-labs/pymc-marketing/releases/tag/0.16.0" target="_blank" rel="noopener" class="cta-button">View Release Notes</a>
+        </div>
+
+        <!-- PyTensor Workshop Series -->
+        <div class="section">
+            <h3>PyTensor Workshop Series: Deep Dive into Computational Graphs</h3>
+            <div class="section-meta">3-Part Series • All Episodes Available</div>
+
+            <img src="https://res.cloudinary.com/dx3t8udaw/image/upload/v1758617841/You_Tube_Thumbnail_bb2f3c3d57.png" alt="PyTensor Workshop Series YouTube Thumbnail" style="width: 100%; height: auto; border-radius: 8px;">
+
+            <p>We've created a complete three-part workshop series on PyTensor — the engine that powers PyMC. If you've ever wondered how PyMC actually works under the hood, or want to build your own optimizations, these workshops will teach you everything step by step.</p>
+
+            <div class="highlight-box">
+                <h4>Workshop #1: How Computational Graphs Work</h4>
+                <p>Start with the basics: what are symbolic variables and how do they work? See how PyTensor is different from NumPy and why that matters. By the end, you'll build a logistic regression model from scratch and understand how to manipulate graphs.</p>
+                
+                <p style="margin-top: 10px;"><strong>Duration:</strong> 2 hour 32 minutes</p>
+                <a href="https://www.youtube.com/watch?v=C1JJ33z9g00" target="_blank" rel="noopener" style="color: #3b82f6; text-decoration: none; font-weight: 600;">Watch Workshop #1 →</a>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 15px;">
+                <h4>Workshop #2: Graph Transformations & Real Examples</h4>
+                <p>Learn how automatic differentiation actually works and see PyTensor's optimization engine in action. Then build a practical example: normalizing flows that can transform simple bell curves into complex distributions.</p>
+                
+                <p style="margin-top: 10px;"><strong>Duration:</strong> 3 hour 2 minutes</p>
+                <a href="https://www.youtube.com/watch?v=jorKDY9kZ6c" target="_blank" rel="noopener" style="color: #3b82f6; text-decoration: none; font-weight: 600;">Watch Workshop #2 →</a>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 15px;">
+                <h4>Workshop #3: Custom Rewrites & Building a Mini-PyMC</h4>
+                <p>Time to get hands-on! Jesse shows you how to build a custom optimization that makes diagonal matrix inversion 80x faster. Then Ricardo builds a complete mini-PyMC from scratch, showing how one graph can handle everything from sampling to optimization.</p>
+                
+                <p style="margin-top: 10px;"><strong>Duration:</strong> 1 hour 15 minutes</p>
+                <a href="https://www.youtube.com/watch?v=boB16AX0OLw" target="_blank" rel="noopener" style="color: #3b82f6; text-decoration: none; font-weight: 600;">Watch Workshop #3 →</a>
+            </div>
+
+            <p><strong>Perfect for:</strong> Anyone using PyMC who wants to understand how it works, developers curious about symbolic computation, or people who want to build their own optimizations.</p>
+
+            <p><strong>Taught by:</strong> Ricardo and Jesse from the PyMC development team. They mix theory with hands-on examples so you can actually use what you learn.</p>
+
+            <div style="text-align: center; margin-top: 25px; padding: 20px; background-color: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+                <p style="margin-bottom: 15px; font-size: 16px;"><strong>Want more content like this?</strong></p>
+                <a href="https://www.youtube.com/@PyMCLabs?sub_confirmation=1" target="_blank" rel="noopener" class="cta-button" style="display: inline-block; background: #e4022f; color: white !important; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; margin-top: 5px;">Subscribe to PyMC Labs on YouTube</a>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -574,7 +634,6 @@
             
             <p style="margin-top: 20px; font-size: 12px; opacity: 0.8;">
                 © 2025 PyMC Labs. All rights reserved.<br>
-                <a href="#" style="font-size: 12px;">Unsubscribe</a> | <a href="#" style="font-size: 12px;">Update Preferences</a>
             </p>
         </div>
     </div>
